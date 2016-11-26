@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dana's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/module.css">
+    <link rel="stylesheet" href="styles/state.css">
+    <link rel="stylesheet" href="styles/theme.css">
   </head>
   <body>
     <div id="wrapper">
@@ -19,13 +23,25 @@
         </nav>
       </header>
       <main>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section id="projects">
+          <article class="template">
+            <h2 class="title">Title</h2>
+            <div class="subTitle">
+              Completed on: <span class="dateComplete">2016-11-05</span>
+              Contains <span class="files">5</span> files.
+            </div>
+            <section class="project-preview">
+              <a href=""><img src="" alt=""></a>
+            </section>
+            <section class="project-body"></section>
+          </article>
+        </section>
         <aside class="links"></aside>
       </main>
       <footer></footer>
     </div><!--end wrapper-->
-    <script type="text/javascript" src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/data.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
   </body>
 </html>
