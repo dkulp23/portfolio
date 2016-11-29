@@ -13,17 +13,19 @@ function Project(obj) {
 }
 
 Project.prototype.renderProject = function() {
-  var $project = $('article.template').clone();
-  $project.find('.title').text(this.title);
-  $project.find('.dateComplete').text(this.completedOn);
-  $project.find('.files').text(this.numFiles);
-  $project.find('span.project-type').text(this.projectType);
-  $project.find('a').attr('href', this.ghPages);
-  $project.find('img').attr('src', this.imageURL);
-  $project.find('img').attr('alt', this.imgAlt);
-  $project.find('.project-body').html(this.description);
-  $project.removeClass('template');
-  return $project;
+  // var $project = $('article.template').clone();
+  // $project.find('.title').text(this.title);
+  // $project.find('.dateComplete').text(this.completedOn);
+  // $project.find('.files').text(this.numFiles);
+  // $project.find('span.project-type').text(this.projectType);
+  // $project.find('a').attr('href', this.ghPages);
+  // $project.find('img').attr('src', this.imageURL);
+  // $project.find('img').attr('alt', this.imgAlt);
+  // $project.find('.project-body').html(this.description);
+  // $project.removeClass('template');
+  // return $project;
+  var blackMagicCompile = Handlebars.compile($('#projectTemplate').html());
+  return blackMagicCompile(this);
 };
 
 myProjects.forEach(function(eachProjectProperty) {
