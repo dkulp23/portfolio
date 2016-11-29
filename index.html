@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/state.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <script id="projectTemplate" type="text/x-handlebars-template">
+      <article>
+        <h2 class="title">{{title}}</h2>
+        <div class="subTitle">
+          Completed on: {{completedOn}} </br>
+          Contains {{numFiles}} files </br>
+          Project type: {{projectType}}
+        </div>
+        <section class="project-preview">
+          <a href="{{ghPages}}"><img src="{{imageURL}}" alt="{{imgAlt}}"></a>
+        </section>
+        <section class="project-body">{{{description}}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -31,18 +45,6 @@
       </header>
       <main>
         <section id="projects" class="page-section">
-          <article class="template">
-            <h2 class="title">Title</h2>
-            <div class="subTitle">
-              Completed on: <span class="dateComplete">2016-11-05</span> </br>
-              Contains <span class="files">5</span> files </br>
-              Project type: <span class="project-type">game</span>
-            </div>
-            <section class="project-preview">
-              <a href=""><img src="" alt=""></a>
-            </section>
-            <section class="project-body"></section>
-          </article>
         </section><!--end projects section-->
         <section id="about" class="page-section">
           <header>
@@ -77,6 +79,7 @@
       </main>
       <footer></footer>
     </div><!--end wrapper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/data.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
