@@ -14,20 +14,29 @@
     <div id="wrapper">
       <header>
         <h1>intro banner goes here</h1>
-        <nav>
+        <nav class="main_nav">
+          <div class="hamburger-menu"></div>
           <ul>
-            <li class="nav_link" data-nav="home"><a href="#">Home</a></li>
+            <li class="nav_link" data-nav="projects"><a href="#">Home</a></li>
             <li class="nav_link" data-nav="about"><a href="#">About</a></li>
+          </ul>
+          <ul id="filters">
+            <li>
+              <select id="type-filter">
+                <option value="">Select Project by Type</option>
+              </select>
+            </li>
           </ul>
         </nav>
       </header>
       <main>
-        <section id="projects">
+        <section id="projects" class="page-section">
           <article class="template">
             <h2 class="title">Title</h2>
             <div class="subTitle">
-              Completed on: <span class="dateComplete">2016-11-05</span>
-              Contains <span class="files">5</span> files.
+              Completed on: <span class="dateComplete">2016-11-05</span> </br>
+              Contains <span class="files">5</span> files </br>
+              Project type: <span class="project-type">game</span>
             </div>
             <section class="project-preview">
               <a href=""><img src="" alt=""></a>
@@ -35,7 +44,7 @@
             <section class="project-body"></section>
           </article>
         </section><!--end projects section-->
-        <section id="about">
+        <section id="about" class="page-section">
           <header>
             <h1>Thanks for checking out my portfolio!</h1>
           </header>
@@ -43,9 +52,27 @@
             <h3>A little about me:</h3>
             <article class="aboutMain">
               <p>My name is Dana and I live in the Fremont neighborhood of Seattle, WA, USA.</p>
+              <ul>
+                Lots of things make me happy!
+                <li>Coding</li>
+                <li>Football (you might call it soccer)</li>
+                <ul>
+                  Food
+                  <li>Baking Bread</li>
+                  <li>Fermentation</li>
+                  <li>All the cheeses!</li>
+                </ul>
+                <li>Bicycles</li>
+              </ul>
+            <footer>
+              <address>
+                <a href="mailto:dkulp23@gmail.com">Send me an email</a>
+                <p>&copy; 2016 | dana kulp</p>
+              </address>
+            </footer>
             </article>
           </main>
-        </section>
+        </section><!--end about me section-->
         <aside class="links"></aside>
       </main>
       <footer></footer>
@@ -53,5 +80,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/data.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/events.js"></script>
   </body>
 </html>

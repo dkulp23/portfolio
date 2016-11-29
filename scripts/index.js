@@ -17,6 +17,7 @@ Project.prototype.renderProject = function() {
   $project.find('.title').text(this.title);
   $project.find('.dateComplete').text(this.completedOn);
   $project.find('.files').text(this.numFiles);
+  $project.find('span.project-type').text(this.projectType);
   $project.find('a').attr('href', this.ghPages);
   $project.find('img').attr('src', this.imageURL);
   $project.find('img').attr('alt', this.imgAlt);

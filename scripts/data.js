@@ -6,7 +6,7 @@ var myProjects = [
     ghPages: 'https://dkulp23.github.io/campfire_coffee/',
     imageURL: '#',
     imgAlt: '',
-    type: 'business',
+    projectType: 'business',
     description: '<p>Campfire Coffee was our introduction to the use of the JavaScript constructor function...</p>',
   },
   {
@@ -16,7 +16,7 @@ var myProjects = [
     ghPages: 'https://dkulp23.github.io/guessing_game/',
     imageURL: '#',
     imgAlt: '',
-    type: 'game',
+    projectType: 'game',
     description: '<p>Guessing Game was our very first 201 project...</p>',
   },
   {
@@ -26,7 +26,7 @@ var myProjects = [
     ghPages: 'https://dkulp23.github.io/bus-mall/',
     imageURL: '#',
     imgAlt: '',
-    type: 'game',
+    projectType: 'game',
     description: '<p>Bus Mall was a fun project that allowed us to practice object oriented programming...</p>',
   },
   {
@@ -36,7 +36,7 @@ var myProjects = [
     ghPages: 'https://dkulp23.github.io/sos/',
     imageURL: '#',
     imgAlt: '',
-    type: 'services',
+    projectType: 'services',
     description: '<p>SOS is a project that my team and I were very proud of...</p>',
   }
 ];
