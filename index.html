@@ -15,9 +15,17 @@
       <header>
         <h1>intro banner goes here</h1>
         <nav class="main_nav">
+          <div class="hamburger-menu"></div>
           <ul>
             <li class="nav_link" data-nav="projects"><a href="#">Home</a></li>
             <li class="nav_link" data-nav="about"><a href="#">About</a></li>
+          </ul>
+          <ul id="filters">
+            <li>
+              <select id="type-filter">
+                <option value="">Select Project by Type</option>
+              </select>
+            </li>
           </ul>
         </nav>
       </header>
@@ -26,8 +34,9 @@
           <article class="template">
             <h2 class="title">Title</h2>
             <div class="subTitle">
-              Completed on: <span class="dateComplete">2016-11-05</span>
-              Contains <span class="files">5</span> files.
+              Completed on: <span class="dateComplete">2016-11-05</span> </br>
+              Contains <span class="files">5</span> files </br>
+              Project type: <span class="project-type">game</span>
             </div>
             <section class="project-preview">
               <a href=""><img src="" alt=""></a>

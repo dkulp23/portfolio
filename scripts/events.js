@@ -10,4 +10,10 @@ proNavsAndFilters.mainNavListener = function() {
 	$('.main_nav .nav_link:first').click();
 }
 
+proNavsAndFilters.fillTheFilters = function() {
+	$('#projects').not('.template').each(function() {
+
+	})
+}
+
 proNavsAndFilters.mainNavListener();
