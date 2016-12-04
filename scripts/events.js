@@ -10,10 +10,17 @@ proNavsAndFilters.mainNavListener = function() {
 	$('.main_nav .nav_link:first').click();
 }
 
-proNavsAndFilters.fillTheFilters = function() {
-	$('#projects').not('.template').each(function() {
-
-	})
+proNavsAndFilters.projectTypeFilter = function() {
+	$('#type-filter').on('change', function() {
+		if($(this).val()) {
+			$('article').hide();
+			$('article[data-type="' + $(this).val() + '"]').fadeIn(1000);
+ 		} else {
+			$('article').fadeIn(1000);
+			$('article.template').hide();
+		}
+	});
 }
 
 proNavsAndFilters.mainNavListener();
+proNavsAndFilters.projectTypeFilter();

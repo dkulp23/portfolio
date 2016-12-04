@@ -9,6 +9,7 @@ function Project(obj) {
   this.ghPages = obj.ghPages;
   this.imageURL = obj.imageURL;
   this.imgAlt = obj.imgAlt;
+  this.projectType = obj.projectType;
   this.description = obj.description;
 }
 
@@ -23,4 +24,5 @@ myProjects.forEach(function(eachProjectProperty) {
 
 projects.forEach(function(projectInstance){
   $('#projects').append(projectInstance.renderProject());
+  $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
 });
