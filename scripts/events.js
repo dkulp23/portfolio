@@ -1,31 +1,36 @@
 'use strict';
 
-var proNavsAndFilters = { };
+(function(module) {
 
-proNavsAndFilters.mainNavListener = function() {
-	$('.main_nav').on('click', '.nav_link', function(){
-		$('.page-section').hide();
-		$(`#${$(this).data('nav')}`).fadeIn(1000);
-		if (`${$(this).data('nav')}` === 'about') {
-			$('#type-filter').hide();
-		} else {
-			$('#type-filter').show();
-		}
-	});
-	$('.main_nav .nav_link:first').click();
-}
+	var proNavsAndFilters = { };
 
-proNavsAndFilters.projectTypeFilter = function() {
-	$('#type-filter').on('change', function() {
-		if($(this).val()) {
-			$('article').hide();
-			$('article[data-type=' + $(this).val() + ']').fadeIn(1000);
-		} else {
-			$('article').fadeIn(1000);
-			$('article.template').hide();
-		}
-	});
-}
+	proNavsAndFilters.mainNavListener = function() {
+		$('.main_nav').on('click', '.nav_link', function(){
+			$('.page-section').hide();
+			$(`#${$(this).data('nav')}`).fadeIn(1000);
+			if (`${$(this).data('nav')}` === 'about') {
+				$('#type-filter').hide();
+			} else {
+				$('#type-filter').show();
+			}
+		});
+		$('.main_nav .nav_link:first').click();
+	}
 
-proNavsAndFilters.mainNavListener();
-proNavsAndFilters.projectTypeFilter();
+	proNavsAndFilters.projectTypeFilter = function() {
+		$('#type-filter').on('change', function() {
+			if($(this).val()) {
+				$('article').hide();
+				$('article[data-type=' + $(this).val() + ']').fadeIn(1000);
+			} else {
+				$('article').fadeIn(1000);
+				$('article.template').hide();
+			}
+		});
+	}
+
+	proNavsAndFilters.mainNavListener();
+	proNavsAndFilters.projectTypeFilter();
+
+	module.proNavsAndFilters = proNavsAndFilters;
+})(window);
