@@ -24,5 +24,7 @@ myProjects.forEach(function(eachProjectProperty) {
 
 projects.forEach(function(projectInstance){
   $('#projects').append(projectInstance.renderProject());
-  $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
+  if($('#type-filter option:contains("' + projectInstance.projectType + '")').length === 0) {
+    $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
+  }
 });
