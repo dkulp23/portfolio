@@ -1,8 +1,12 @@
 'use strict';
 
-var projectsController = {};
+(function(module) {
+  var projectsController = {};
 
-projectsController.reveal = function() {
-  $('.page-section').hide();
-  $('#projects').fadeIn(500);
-};
+  projectsController.showProjects = function() {
+    $('.page-section').hide();
+    $('#projects').fadeIn(500);
+  };
+
+  module.projectsController = projectsController;
+})(window);
