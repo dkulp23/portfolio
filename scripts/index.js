@@ -32,7 +32,7 @@
       Project.useDataToMakeObjects(localStorageProjects);
       Project.renderProjects();
     } else {
-      $.getJSON('/scripts/data.json')
+      $.getJSON('/data/data.json')
       .done(function(projectData) {
         console.log(projectData);
         Project.useDataToMakeObjects(projectData);
