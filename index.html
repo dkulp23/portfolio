@@ -23,6 +23,17 @@
         <section class="project-body">{{{description}}}</section>
       </article>
     </script>
+    <script id="git-template" type="text/x-handlebars-template">
+      <article>
+        <li>
+          <a href="{{html_url}}" target="_blank"><h2>{{name}}</h2></a>
+          <p>Description: {{description}}</p>
+          <p>Language: {{language}}</p>
+          <p>Last updated: {{formatDate updated_at}}</p>
+          <p>Project size: {{size}} kbs</p>
+        </li>
+      </article>
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -67,6 +78,10 @@
                 </li>
                 <li>Bicycles</li>
               </ul>
+            <article class="github-repos">
+              <h2>Check out what I've been up to on my GitHub page:</h2>
+              <ul id="repo-ul"></ul>
+            </article>
             <footer>
               <address>
                 <a href="mailto:dkulp23@gmail.com">Send me an email</a>
