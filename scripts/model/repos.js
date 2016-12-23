@@ -4,7 +4,7 @@
 
   var repoObj = {};
 
-  var ghRepos = [];
+  repoObj.ghRepos = [];
 
   repoObj.getRepos = function(callback) {
     $.ajax({
@@ -16,11 +16,11 @@
     }).
     then(function(data) {
       data.forEach(function(obj){
-        ghRepos.push(obj);
+        repoObj.ghRepos.push(obj);
         callback();
       })
     }
     )
   }
-
+  module.repoObj = repoObj;
 })(window);
