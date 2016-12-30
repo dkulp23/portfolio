@@ -17,7 +17,7 @@ var proxyGHrequest = function(request, response) {
 
 app.get('/github/*', proxyGHrequest);
 
-app.use(express.static('./'));
+app.use(express.static('./public'));
 
 app.get('*', function(request, response) {
   console.log(`New request ${request.url}`);
