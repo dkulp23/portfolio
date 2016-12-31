@@ -2,8 +2,6 @@
 
 (function(module) {
 
-  var projects = [ ];
-
   function Project(obj) {
     this.title = obj.title;
     this.completedOn = obj.completedOn;
@@ -15,6 +13,8 @@
     this.description = obj.description;
   }
 
+  Project.allProjects = [ ];
+
   Project.prototype.compileTemplate = function() {
     var blackMagicCompile = Handlebars.compile($('#projectTemplate').html());
     return blackMagicCompile(this);
@@ -22,35 +22,24 @@
 
   Project.useDataToMakeObjects = function(data) {
     data.forEach(function(thisProject) {
-      projects.push(new Project(thisProject));
+      Project.allProjects.push(new Project(thisProject));
     })
   };
 
-  Project.getData = function() {
+  Project.getData = function(callback) {
     if(localStorage.myProjectData) {
       var localStorageProjects = JSON.parse(localStorage.getItem('myProjectData'));
       Project.useDataToMakeObjects(localStorageProjects);
-      Project.renderProjects();
+      callback();
     } else {
       $.getJSON('/data/data.json')
       .done(function(projectData) {
         Project.useDataToMakeObjects(projectData);
-        Project.renderProjects();
+        callback();
         localStorage.setItem('myProjectData', JSON.stringify(projectData));
       })
     }
   };
-
-  Project.renderProjects = function() {
-    projects.forEach(function(projectInstance){
-      $('#projects').append(projectInstance.compileTemplate());
-      if($('#type-filter option:contains("' + projectInstance.projectType + '")').length === 0) {
-        $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
-      }
-    })
-  };
-
-  Project.getData();
 
   module.Project = Project;
 

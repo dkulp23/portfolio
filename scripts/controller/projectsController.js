@@ -10,7 +10,7 @@
 
   projectsController.index = function(ctx, next) {
     if(ctx.articles.length) {
-      Project.renderProjects(ctx.articles);
+      projectView.renderProjects();
     } else {
       page('/');
     }
@@ -22,6 +22,9 @@
       next();
     }
   };
+
+  Project.getData(projectView.renderProjects);
+
 
   module.projectsController = projectsController;
 })(window);
