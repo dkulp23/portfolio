@@ -15,6 +15,8 @@
       repoObj.ghRepos.map(repoTemplateCompiler)
     );
   };
+
   repoObj.getRepos(repoViewObj.renderTheRepos);
+
   module.repoViewObj = repoViewObj;
 })(window);
