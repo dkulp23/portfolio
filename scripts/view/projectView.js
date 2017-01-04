@@ -4,14 +4,14 @@
 
 	var projectView = { };
 
-  projectView.renderProjects = function() {
-    Project.allProjects.forEach(function(projectInstance){
-      $('#projects').append(projectInstance.compileTemplate());
-      if($('#type-filter option:contains("' + projectInstance.projectType + '")').length === 0) {
-        $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
-      }
-    })
-  };
+	projectView.renderProjects = function() {
+	  Project.allProjects.forEach(function(projectInstance){
+	    $('#projects').append(projectInstance.compileTemplate());
+	    if($('#type-filter option:contains("' + projectInstance.projectType + '")').length === 0) {
+	      $('#type-filter').append('<option>' + projectInstance.projectType + '</option>');
+	    }
+	  })
+	};
 
 
 	projectView.projectTypeFilter = function() {
